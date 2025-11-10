@@ -1,0 +1,191 @@
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scrollAnim {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+    }
+    71% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation classes */
+.animate-fade-in {
+    animation: fadeIn 0.8s forwards;
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-fade-in-right {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.animate-fade-in-left {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+/* Scroll-based animations */
+.animated {
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animated.fade-in-up {
+    animation: fadeInUp 0.8s forwards;
+}
+
+.animated.fade-in-right {
+    animation: fadeInRight 0.8s forwards;
+}
+
+.animated.fade-in-left {
+    animation: fadeInLeft 0.8s forwards;
+}
+
+/* Delay classes */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+/* For form submission */
+@keyframes formSuccess {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-success {
+    animation: formSuccess 0.5s forwards;
+}
+
+/* Loader animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}

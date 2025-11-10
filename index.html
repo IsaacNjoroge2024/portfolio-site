@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Isaac Njoroge - Backend Software Developer portfolio showcasing projects and skills in Java, Spring Boot, and web development.">
+    <title>Isaac Njoroge | Backend Software Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-outline" id="cursor-outline"></div>
+
+<!-- Header -->
+<header id="header">
+    <nav class="container nav">
+        <a href="#hero" class="logo">IN</a>
+
+        <div class="menu-btn" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="container hero-content">
+        <h1 class="title">Hello, I'm Isaac.</h1>
+        <h2 class="subtitle">I'm a backend software developer.</h2>
+        <a href="#projects" class="cta-btn">View my work <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+        <p>Scroll Down</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container about-content">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-text">
+            <p>
+                Fully committed to the philosophy of life-long learning. I'm always ready for change and adopting new technologies. So, I am a backend developer with a deep passion for Java, Springboot, Microservices, and all things web development.
+            </p>
+            <p>
+                I do dabble in frontend work sometimes on my personal works including working with TypeScript + ReactJS, JavaScript, NextJS, and other frontend frameworks.
+            </p>
+            <p>
+                The unique combination of creativity, logic, technology and never running out of new things to discover, drives my excitement and passion for web development. When I'm not at my computer I like to spend my time reading comics, going to the gym, and playing/watching video games.
+            </p>
+        </div>
+
+        <div class="skills">
+            <h3 class="skills-title">Tech Stack</h3>
+            <div class="skills-grid">
+                <div class="skill-item" data-tooltip="Java">
+                    <i class="devicon-java-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="Spring Boot">
+                    <i class="devicon-spring-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="MySQL">
+                    <i class="devicon-mysql-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="PostgreSQL">
+                    <i class="devicon-postgresql-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="React">
+                    <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="TypeScript">
+                    <i class="devicon-typescript-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="Next.js">
+                    <i class="devicon-nextjs-original"></i>
+                </div>
+                <div class="skill-item" data-tooltip="JavaScript">
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="Docker">
+                    <i class="devicon-docker-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="Git">
+                    <i class="devicon-git-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="REST API">
+                    <i class="devicon-nodejs-plain colored"></i>
+                </div>
+                <div class="skill-item" data-tooltip="Microservices">
+                    <i class="devicon-amazonwebservices-plain colored"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container projects-content">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/600x400?text=TaskFlow" alt="TaskFlow Project">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">TaskFlow</h3>
+                <p class="project-description">
+                    TaskFlow is a modern, full-stack task management application with clean architecture and separation of concerns.
+                </p>
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Frontend: Vanilla HTML5, CSS3, JavaScript</li>
+                    <li><span class="feature-bullet">•</span> Backend: Spring Boot 3.4.4 with Java 17</li>
+                    <li><span class="feature-bullet">•</span> Database: H2/PostgreSQL</li>
+                    <li><span class="feature-bullet">•</span> Architecture: RESTful API</li>
+                    <li><span class="feature-bullet">•</span> Build Tool: Gradle 8.x with Liquibase</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/IsaacNjoroge2024/taskflow-frontend" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Frontend Repo
+                    </a>
+                    <a href="https://github.com/IsaacNjoroge2024/taskflow-backend" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Backend Repo
+                    </a>
+                    <a href="#" class="project-link live-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo (Coming Soon)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card in-progress">
+            <div class="project-image">
+                <img src="https://via.placeholder.com/600x400?text=AI+CMS" alt="AI CMS Project">
+                <div class="in-progress-badge">
+                    <i class="fas fa-hard-hat"></i>
+                    <span>In Progress</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">AI Content Management System</h3>
+                <p class="project-description">
+                    A modern CMS with AI-assisted content creation, SEO optimization, and automated publishing workflows across multiple platforms.
+                </p>
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Authentication & role-based access control</li>
+                    <li><span class="feature-bullet">•</span> AI writing assistance with OpenAI GPT-4 API</li>
+                    <li><span class="feature-bullet">•</span> Multi-tenant architecture supporting multiple blogs</li>
+                    <li><span class="feature-bullet">•</span> Publishing automation with scheduled posts</li>
+                    <li><span class="feature-bullet">•</span> Next.js, tRPC, Supabase PostgreSQL</li>
+                </ul>
+                <div class="project-links">
+                    <a href="#" class="project-link disabled">
+                        <i class="fab fa-github"></i> Repository (Coming Soon)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container contact-content">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
+
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="contact-alt">
+            <p>Or reach me directly at:</p>
+            <a href="mailto:isaacnj02@gmail.com" class="email-link">
+                <i class="fas fa-envelope"></i> isaacnj02@gmail.com
+            </a>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-content">
+        <p>© 2025 Isaac Njoroge. All rights reserved.</p>
+        <p>Built with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
