@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thank You | Isaac Njoroge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .thank-you-container {
+            background-color: rgba(30, 30, 40, 0.8);
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        i.success-icon {
+            font-size: 4rem;
+            color: #00e676;
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you-container h1 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .thank-you-container p {
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #007acc;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0bd3d3;
+            transform: translateY(-3px);
+        }
+
+        #stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<div id="stars-container" class="stars-container"></div>
+
+<div class="thank-you-container">
+    <i class="fas fa-check-circle success-icon"></i>
+    <h1>Thank You!</h1>
+    <p>Your message has been received. I'll get back to you as soon as possible.</p>
+    <a href="index.html" class="back-btn">Back to Homepage</a>
+</div>
+
+<script src="js/stars.js"></script>
+<script>
+    // Redirect to homepage after 5 seconds
+    setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 5000);
+</script>
+</body>
+</html>

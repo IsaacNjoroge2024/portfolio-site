@@ -12,11 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-<div class="cursor-dot" id="cursor-dot"></div>
-<div class="cursor-outline" id="cursor-outline"></div>
+<!-- Stars background -->
+<div id="stars-container" class="stars-container"></div>
 
 <!-- Header -->
 <header id="header">
@@ -56,13 +59,13 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-text">
             <p>
-                Fully committed to the philosophy of life-long learning. I'm always ready for change and adopting new technologies. So, I am a backend developer with a deep passion for Java, Springboot, Microservices, and all things web development.
+                Fully committed to the philosophy of life-long learning. I'm always ready for change and adopting new technologies. So, I am a backend developer currently working with Java, Spring Boot, Microservices, and all things web development.
             </p>
             <p>
-                I do dabble in frontend work sometimes on my personal works including working with TypeScript + ReactJS, JavaScript, NextJS, and other frontend frameworks.
+                I do sometimes dabble in frontend work on my personal works, including working with TypeScript + ReactJS, JavaScript, Next.js, and other frontend frameworks.
             </p>
             <p>
-                The unique combination of creativity, logic, technology and never running out of new things to discover, drives my excitement and passion for web development. When I'm not at my computer I like to spend my time reading comics, going to the gym, and playing/watching video games.
+                The unique combination of creativity, logic, technology, and never running out of new things to discover, drives my excitement and passion for web development. When I'm not at my computer, I like to spend my time reading web comics, going to the gym, and playing/watching video games.
             </p>
         </div>
 
@@ -181,7 +184,11 @@
         <h2 class="section-title">Contact</h2>
         <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
 
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/isaacnj02@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://isaacnjoroge.dev/thank-you.html">
+
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -208,11 +215,8 @@
             <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" class="social-link">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-link">
-                <i class="fab fa-twitter"></i>
+            <a href="mailto:isaacnj02@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
             </a>
         </div>
     </div>
@@ -226,9 +230,20 @@
     </div>
 </footer>
 
+<!-- Thank You Page for Form Submission -->
+<div id="thank-you" class="thank-you-message">
+    <div class="thank-you-content">
+        <i class="fas fa-check-circle"></i>
+        <h2>Thank You!</h2>
+        <p>Your message has been sent successfully.</p>
+        <p>I'll get back to you as soon as possible.</p>
+        <button id="thank-you-close" class="close-btn">Close</button>
+    </div>
+</div>
+
 <!-- Scripts -->
 <script src="js/main.js"></script>
-<script src="js/cursor.js"></script>
+<script src="js/stars.js"></script>
 <script src="js/form.js"></script>
 </body>
 </html>
