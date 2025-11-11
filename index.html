@@ -184,10 +184,14 @@
         <h2 class="section-title">Contact</h2>
         <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
 
-        <form id="contact-form" class="contact-form" action="https://formsubmit.co/isaacnj02@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New message from portfolio website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://isaacnjoroge.com/thank-you.html">
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms required fields -->
+            <input type="hidden" name="access_key" value="5afc6540-f69d-46f9-8753-8ba4579613fd">
+            <input type="hidden" name="subject" value="New message from portfolio website">
+            <input type="hidden" name="redirect" value="https://isaacnjoroge.com/thank-you.html">
+
+            <!-- Honeypot field to prevent spam -->
+            <input type="hidden" name="honeypot" id="honeypot" style="display:none">
 
             <div class="form-group">
                 <label for="name">Name</label>

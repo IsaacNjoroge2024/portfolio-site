@@ -1,5 +1,5 @@
 /**
- * Contact form handling
+ * Contact form handling with Web3Forms integration
  */
 
 // DOM Elements
@@ -13,29 +13,72 @@ document.addEventListener('DOMContentLoaded', () => {
     initThankYouModal();
 });
 
-/**
- * Initialize form validation
- */
 function initFormValidation() {
     if (contactForm) {
-        // I'm using FormSubmit.co for email handling, so we only need client-side validation
-        contactForm.addEventListener('submit', validateForm);
+        // Replacing the default form submission with fetch API for Web3Forms
+        contactForm.addEventListener('submit', handleFormSubmit);
     }
 }
 
-/**
- * Validate form before submission
- * @param {Event} e - The form submission event
- */
-function validateForm(e) {
+function handleFormSubmit(e) {
+    e.preventDefault();
+
+    if (!validateForm()) {
+        return false;
+    }
+
+    // the loading state
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Getting the form data
+    const formData = new FormData(contactForm);
+    const object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;
+    });
+
+    // Sending data to Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(object)
+    })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status === 200) {
+                // Success
+                contactForm.reset();
+                showThankYouModal();
+            } else {
+                // Error
+                console.error('Form submission error:', json);
+                alert('Something went wrong. Please try again or contact me directly via email.');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            alert('Something went wrong. Please try again or contact me directly via email.');
+        })
+        .finally(() => {
+            // the reset button state
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+        });
+}
+
+function validateForm() {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
 
     // Check for empty fields
     if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
-        e.preventDefault();
-
         // Highlighting the empty fields
         if (!nameInput.value.trim()) {
             nameInput.style.borderColor = 'red';
@@ -61,7 +104,6 @@ function validateForm(e) {
     // Check email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value.trim())) {
-        e.preventDefault();
         emailInput.style.borderColor = 'red';
         return false;
     }
@@ -80,6 +122,7 @@ function initThankYouModal() {
         });
     }
 
+    // Checking URL parameters for the thank you page redirect
     const urlParams = new URLSearchParams(window.location.search);
     const success = urlParams.get('success');
 
