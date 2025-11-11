@@ -9,7 +9,7 @@ const navList = document.getElementById('nav-list');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
 
-// Initialize the page
+// Initializing the page
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
     initScrollListener();
@@ -23,14 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initScrollListener() {
     window.addEventListener('scroll', () => {
-        // Add scrolled class to header when scrolled
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
 
-        // Highlight active nav link based on scroll position
+        // Highlighting the active nav link based on scroll position
         let current = '';
 
         sections.forEach(section => {
@@ -60,7 +59,7 @@ function initMenuToggle() {
         navList.classList.toggle('active');
     });
 
-    // Close menu when clicking outside or on a link
+    // Closing the menu when clicking outside or on a link
     document.addEventListener('click', (e) => {
         const isMenuBtn = e.target.closest('#menu-btn');
         const isNavList = e.target.closest('.nav-list');
@@ -71,7 +70,7 @@ function initMenuToggle() {
         }
     });
 
-    // Close mobile menu when clicking a nav link
+    // Closing the mobile menu when clicking a nav link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navList.classList.contains('active')) {
@@ -94,7 +93,7 @@ function initSmoothScrolling() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Account for fixed header height
+                // Accounting for the fixed header height
                 const headerHeight = document.getElementById('header').offsetHeight;
                 const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
 
@@ -127,7 +126,7 @@ function initScrollAnimation() {
             if (entry.isIntersecting) {
                 const element = entry.target;
 
-                // Add the animation class based on the element's class
+                // Adding the animation class based on the element's class
                 if (element.classList.contains('animate-fade-in-up')) {
                     element.classList.add('animated', 'fade-in-up');
                 } else if (element.classList.contains('animate-fade-in-right')) {
@@ -136,13 +135,13 @@ function initScrollAnimation() {
                     element.classList.add('animated', 'fade-in-left');
                 }
 
-                // Unobserve element after animation
+                // Unobserving element after animation
                 observer.unobserve(element);
             }
         });
     }, options);
 
-    // Observe all elements to animate
+    // Observing all elements to animate
     animatedElements.forEach(element => {
         observer.observe(element);
     });

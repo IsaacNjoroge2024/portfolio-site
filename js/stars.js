@@ -1,5 +1,5 @@
 /**
- * Creates a starry background effect
+ * Creates an enhanced starry background effect
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function createStars() {
     const starsContainer = document.getElementById('stars-container');
-    const numberOfStars = 200;
+    const numberOfStars = 400; // Increased from 200 to 400
 
     if (!starsContainer) return;
 
@@ -28,12 +28,21 @@ function createStars() {
  * @param {HTMLElement} container - The container to append the star to
  */
 function createStar(container) {
-    // Create star element
+    const isShapedStar = Math.random() < 0.5;
+
+    // Creating the star element
     const star = document.createElement('div');
     star.classList.add('star');
 
-    // Random size between 1px and 3px
-    const size = Math.random() * 2 + 1;
+    if (isShapedStar) {
+        star.classList.add('shaped-star');
+        // Random rotation for shaped stars
+        const rotation = Math.random() * 360;
+        star.style.transform = `rotate(${rotation}deg)`;
+    }
+
+    // Random size between 1px and 4px
+    const size = Math.random() * 3 + 1;
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
 
@@ -44,21 +53,20 @@ function createStar(container) {
     star.style.top = `${posY}%`;
 
     // Animation properties
-    const opacity = Math.random() * 0.5 + 0.3; // Between 0.3 and 0.8
-    const duration = Math.random() * 15 + 10; // Between 10s and 25s
-    const delay = Math.random() * 10; // Between 0s and 10s
-    const distance = Math.random() * 10 - 5; // Between -5px and 5px (for subtle movement)
+    const opacity = Math.random() * 0.7 + 0.5;
+    const duration = Math.random() * 8 + 2;
+    const delay = Math.random() * 5;
+    const distance = Math.random() * 10 - 5;
 
-    // Set CSS variables for the animation
+    // Setting the CSS variables for the animation
     star.style.setProperty('--opacity', opacity);
     star.style.setProperty('--duration', `${duration}s`);
     star.style.setProperty('--distance', `${distance}px`);
     star.style.animationDelay = `${delay}s`;
 
-    // Add star to container
     container.appendChild(star);
 
-    // After animation completes, recreate the star
+    // After animation completes, am recreating the star
     setTimeout(() => {
         if (container.contains(star)) {
             container.removeChild(star);
@@ -71,7 +79,7 @@ function createStar(container) {
  * Re-create stars when the window is resized
  */
 window.addEventListener('resize', () => {
-    // Debounce the resize event
+    // Debouncing the resize event
     clearTimeout(window.resizeTimer);
     window.resizeTimer = setTimeout(() => {
         createStars();

@@ -442,16 +442,21 @@ section {
     box-shadow: 0 15px 40px var(--shadow-color);
 }
 
+/* project image styles */
 .project-image {
     flex: 1;
     position: relative;
     overflow: hidden;
+    height: 400px;
+    background-color: var(--dark-tertiary-bg);
 }
 
 .project-image img {
+    width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 1s ease;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.8s ease;
 }
 
 .project-card:hover .project-image img {
@@ -774,7 +779,8 @@ section {
     }
 
     .project-image {
-        height: 300px;
+        height: 350px;
+        width: 100%;
     }
 }
 
@@ -840,6 +846,10 @@ section {
     .contact-form {
         padding: 2rem;
     }
+
+    .project-image {
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -862,5 +872,9 @@ section {
 
     .contact-form {
         padding: 1.5rem;
+    }
+
+    .project-image {
+        height: 250px;
     }
 }

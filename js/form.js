@@ -7,7 +7,7 @@ const contactForm = document.getElementById('contact-form');
 const thankYouModal = document.getElementById('thank-you');
 const thankYouCloseBtn = document.getElementById('thank-you-close');
 
-// Initialize form functionality
+// Initializing the form functionality
 document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initThankYouModal();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initFormValidation() {
     if (contactForm) {
-        // We're using FormSubmit.co for email handling, so we only need client-side validation
+        // I'm using FormSubmit.co for email handling, so we only need client-side validation
         contactForm.addEventListener('submit', validateForm);
     }
 }
@@ -36,7 +36,7 @@ function validateForm(e) {
     if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
         e.preventDefault();
 
-        // Highlight empty fields
+        // Highlighting the empty fields
         if (!nameInput.value.trim()) {
             nameInput.style.borderColor = 'red';
         } else {
@@ -66,7 +66,6 @@ function validateForm(e) {
         return false;
     }
 
-    // If form is valid, allow submission (FormSubmit.co will handle the rest)
     return true;
 }
 
@@ -74,14 +73,13 @@ function validateForm(e) {
  * Initialize the thank you modal
  */
 function initThankYouModal() {
-    // If we're on the thank-you page, handle close button
+    // For the thank-you page
     if (thankYouModal && thankYouCloseBtn) {
         thankYouCloseBtn.addEventListener('click', () => {
             thankYouModal.classList.remove('show');
         });
     }
 
-    // If URL has a success parameter, show the thank you modal
     const urlParams = new URLSearchParams(window.location.search);
     const success = urlParams.get('success');
 
@@ -97,7 +95,7 @@ function showThankYouModal() {
     if (thankYouModal) {
         thankYouModal.classList.add('show');
 
-        // Auto-close after 5 seconds
+        // Auto-closing the thank you page after 5 seconds
         setTimeout(() => {
             thankYouModal.classList.remove('show');
         }, 5000);
@@ -112,7 +110,7 @@ if (contactForm) {
 
     formInputs.forEach(input => {
         input.addEventListener('input', () => {
-            // Reset border color when user starts typing
+            // Resetting the border color when the user starts typing
             input.style.borderColor = '';
         });
     });
