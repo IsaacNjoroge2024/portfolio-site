@@ -118,6 +118,60 @@
     <div class="container projects-content">
         <h2 class="section-title">Projects</h2>
 
+        <div class="project-card in-progress">
+            <div class="project-image">
+                <img src="images/projects/Graph going up image.png" alt="Tradie Trading Bot Project" style="object-fit: cover; object-position: center; padding-top: 80px;">
+                <div class="in-progress-badge">
+                    <i class="fas fa-hard-hat"></i>
+                    <span>In Progress</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Tradie</h3>
+                <p class="project-description">
+                    Tradie is a production-grade autonomous trading bot built on a microservices architecture. It ingests real-time signals from custom TradingView Pine Scripts, validates them through a strategy engine with strict risk rules, filters out high-risk market conditions using NLP-powered sentiment analysis, and executes bracket orders through Interactive Brokers — all while sending live trade alerts via Telegram.
+                </p>
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Microservices: Spring Boot 3.x (Java 21) API gateway, strategy engine & order executor</li>
+                    <li><span class="feature-bullet">•</span> Python/FastAPI sentiment service with VADER & FinBERT NLP models</li>
+                    <li><span class="feature-bullet">•</span> Apache Kafka for real-time inter-service event streaming</li>
+                    <li><span class="feature-bullet">•</span> TradingView Pine Script signals using Smart Money Concepts (FVG, Order Blocks, BOS/CHoCH)</li>
+                    <li><span class="feature-bullet">•</span> Interactive Brokers TWS API with bracket order execution & position management</li>
+                    <li><span class="feature-bullet">•</span> TimescaleDB, Redis, Docker, Prometheus & Grafana for data and monitoring</li>
+                </ul>
+                <div class="project-links">
+                    <a href="#" class="project-link disabled">
+                        <i class="fab fa-github"></i> Repository (Coming Soon)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="images/projects/happylandgardens.png" alt="Happyland Gardens Project">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Happyland Gardens</h3>
+                <p class="project-description">
+                    Happyland Gardens is a responsive event venue website for a premier Nairobi-based venue. It showcases multiple event types with detailed galleries, enables booking inquiries via WhatsApp and phone integration, and is fully optimized for SEO with structured data and Google Analytics.
+                </p>
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Next.js 16 (App Router) with TypeScript and Tailwind CSS 4</li>
+                    <li><span class="feature-bullet">•</span> Framer Motion animations with a custom design system</li>
+                    <li><span class="feature-bullet">•</span> Interactive image gallery with slideshow modal for venue showcase</li>
+                    <li><span class="feature-bullet">•</span> Booking modal with WhatsApp, phone & Google Maps integration</li>
+                    <li><span class="feature-bullet">•</span> SEO-optimized with JSON-LD structured data, Open Graph & Twitter cards</li>
+                    <li><span class="feature-bullet">•</span> GDPR-compliant cookie consent, Google Analytics, deployed on Vercel</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://happyland-gardens-web.vercel.app/" class="project-link" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Live Site
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="project-card">
             <div class="project-image">
                 <img src="images/projects/taskflow.png" alt="TaskFlow Project">
