@@ -142,7 +142,7 @@ section { padding: 8rem 0; }
     height: 8px;
     background: var(--accent-color);
     border-radius: 50%;
-    left: 0; top: 0;
+    left: -200px; top: -200px; /* start fully off-screen — JS positions on first mousemove */
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
@@ -155,7 +155,7 @@ section { padding: 8rem 0; }
     height: 36px;
     border: 2px solid rgba(11, 211, 211, 0.5);
     border-radius: 50%;
-    left: 0; top: 0;
+    left: -200px; top: -200px; /* start fully off-screen — JS positions on first mousemove */
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9998;
@@ -170,7 +170,8 @@ section { padding: 8rem 0; }
     border-color: var(--accent-color);
 }
 
-@media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+/* Hide custom cursor on touch/mobile — (pointer: coarse) catches devices @media (hover:none) misses */
+@media (hover: none), (pointer: coarse) { .cursor-dot, .cursor-ring { display: none !important; } }
 
 /* ── 5. STARS ──────────────────────────────────────────────── */
 .stars-container {
