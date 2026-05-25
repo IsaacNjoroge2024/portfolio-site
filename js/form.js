@@ -1,21 +1,19 @@
 /**
- * Contact form handling with Web3Forms integration
+ * Contact form — Web3Forms integration
  */
 
-// DOM Elements
-const contactForm = document.getElementById('contact-form');
-const thankYouModal = document.getElementById('thank-you');
-const thankYouCloseBtn = document.getElementById('thank-you-close');
+const contactForm    = document.getElementById('contact-form');
+const thankYouModal  = document.getElementById('thank-you');
+const thankYouClose  = document.getElementById('thank-you-close');
 
-// Initializing the form functionality
 document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initThankYouModal();
 });
 
+/* ── Form submit ─────────────────────────────────────────────── */
 function initFormValidation() {
     if (contactForm) {
-        // Replacing the default form submission with fetch API for Web3Forms
         contactForm.addEventListener('submit', handleFormSubmit);
     }
 }
@@ -23,137 +21,115 @@ function initFormValidation() {
 function handleFormSubmit(e) {
     e.preventDefault();
 
-    if (!validateForm()) {
-        return false;
-    }
+    if (!validateForm()) return false;
 
-    // the loading state
     const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    setLoading(submitBtn, true);
 
-    // Getting the form data
     const formData = new FormData(contactForm);
-    const object = {};
-    formData.forEach((value, key) => {
-        object[key] = value;
-    });
+    const object   = {};
+    formData.forEach((value, key) => { object[key] = value; });
 
-    // Sending data to Web3Forms
     fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(object)
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(object)
     })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status === 200) {
-                // Success
-                contactForm.reset();
-                showThankYouModal();
-            } else {
-                // Error
-                console.error('Form submission error:', json);
-                alert('Something went wrong. Please try again or contact me directly via email.');
-            }
-        })
-        .catch(error => {
-            console.error('Form submission error:', error);
+    .then(async response => {
+        const json = await response.json();
+        if (response.status === 200) {
+            contactForm.reset();
+            showThankYouModal();
+        } else {
+            console.error('Form submission error:', json);
             alert('Something went wrong. Please try again or contact me directly via email.');
-        })
-        .finally(() => {
-            // the reset button state
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-        });
+        }
+    })
+    .catch(error => {
+        console.error('Form submission error:', error);
+        alert('Something went wrong. Please try again or contact me directly via email.');
+    })
+    .finally(() => {
+        setLoading(submitBtn, false);
+    });
 }
 
+/* ── Loading state ───────────────────────────────────────────── */
+function setLoading(btn, isLoading) {
+    if (!btn) return;
+    if (isLoading) {
+        btn.classList.add('loading');
+        btn.disabled = true;
+    } else {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+    }
+}
+
+/* ── Validation ──────────────────────────────────────────────── */
 function validateForm() {
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
+    const nameInput    = document.getElementById('name');
+    const emailInput   = document.getElementById('email');
     const messageInput = document.getElementById('message');
 
-    // Check for empty fields
-    if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
-        // Highlighting the empty fields
-        if (!nameInput.value.trim()) {
-            nameInput.style.borderColor = 'red';
-        } else {
-            nameInput.style.borderColor = '';
-        }
+    let valid = true;
 
-        if (!emailInput.value.trim()) {
-            emailInput.style.borderColor = 'red';
+    [nameInput, emailInput, messageInput].forEach(input => {
+        if (!input.value.trim()) {
+            setFieldError(input, true);
+            valid = false;
         } else {
-            emailInput.style.borderColor = '';
+            setFieldError(input, false);
         }
+    });
 
-        if (!messageInput.value.trim()) {
-            messageInput.style.borderColor = 'red';
-        } else {
-            messageInput.style.borderColor = '';
+    if (valid) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            setFieldError(emailInput, true);
+            valid = false;
         }
-
-        return false;
     }
 
-    // Check email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value.trim())) {
-        emailInput.style.borderColor = 'red';
-        return false;
-    }
-
-    return true;
+    return valid;
 }
 
-/**
- * Initialize the thank you modal
- */
+function setFieldError(input, hasError) {
+    if (hasError) {
+        input.style.borderColor = '#ef4444';
+        input.classList.add('shake');
+        setTimeout(() => input.classList.remove('shake'), 450);
+    } else {
+        input.style.borderColor = '';
+    }
+}
+
+/* ── Thank-you modal ─────────────────────────────────────────── */
 function initThankYouModal() {
-    // For the thank-you page
-    if (thankYouModal && thankYouCloseBtn) {
-        thankYouCloseBtn.addEventListener('click', () => {
+    if (thankYouModal && thankYouClose) {
+        thankYouClose.addEventListener('click', () => {
             thankYouModal.classList.remove('show');
         });
     }
 
-    // Checking URL parameters for the thank you page redirect
+    // URL param support (for redirect flow)
     const urlParams = new URLSearchParams(window.location.search);
-    const success = urlParams.get('success');
-
-    if (success === 'true' && thankYouModal) {
+    if (urlParams.get('success') === 'true' && thankYouModal) {
         showThankYouModal();
     }
 }
 
-/**
- * Show the thank you modal
- */
 function showThankYouModal() {
     if (thankYouModal) {
         thankYouModal.classList.add('show');
-
-        // Auto-closing the thank you page after 5 seconds
-        setTimeout(() => {
-            thankYouModal.classList.remove('show');
-        }, 5000);
+        setTimeout(() => thankYouModal.classList.remove('show'), 5000);
     }
 }
 
-/**
- * Reset form fields on input
- */
+/* ── Reset field error on typing ─────────────────────────────── */
 if (contactForm) {
-    const formInputs = contactForm.querySelectorAll('input, textarea');
-
-    formInputs.forEach(input => {
+    contactForm.querySelectorAll('input, textarea').forEach(input => {
         input.addEventListener('input', () => {
-            // Resetting the border color when the user starts typing
             input.style.borderColor = '';
         });
     });

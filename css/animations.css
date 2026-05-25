@@ -1,191 +1,105 @@
-/* Animations */
+/* ============================================================
+   Isaac Njoroge Portfolio — animations.css
+   ============================================================ */
+
+/* ── KEYFRAMES ──────────────────────────────────────────────── */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes scrollAnim {
-    0% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
-    70% {
-        transform: translateX(-50%) translateY(20px);
-        opacity: 0;
-    }
-    71% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(10px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1);    opacity: 1; }
+    50%       { transform: scale(1.15); opacity: 0.7; }
 }
 
-/* Animation classes */
-.animate-fade-in {
-    animation: fadeIn 0.8s forwards;
-}
-
-.animate-fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.animate-fade-in-right {
-    opacity: 0;
-    transform: translateX(-30px);
-}
-
-.animate-fade-in-left {
-    opacity: 0;
-    transform: translateX(30px);
-}
-
-/* Scroll-based animations */
-.animated {
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.animated.fade-in-up {
-    animation: fadeInUp 0.8s forwards;
-}
-
-.animated.fade-in-right {
-    animation: fadeInRight 0.8s forwards;
-}
-
-.animated.fade-in-left {
-    animation: fadeInLeft 0.8s forwards;
-}
-
-/* Delay classes */
-.delay-100 {
-    animation-delay: 0.1s;
-}
-
-.delay-200 {
-    animation-delay: 0.2s;
-}
-
-.delay-300 {
-    animation-delay: 0.3s;
-}
-
-.delay-400 {
-    animation-delay: 0.4s;
-}
-
-.delay-500 {
-    animation-delay: 0.5s;
-}
-
-.delay-600 {
-    animation-delay: 0.6s;
-}
-
-.delay-700 {
-    animation-delay: 0.7s;
-}
-
-.delay-800 {
-    animation-delay: 0.8s;
-}
-
-/* For form submission */
-@keyframes formSuccess {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.form-success {
-    animation: formSuccess 0.5s forwards;
-}
-
-/* Loader animation */
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@keyframes scrollAnim {
+    0%   { transform: translateX(-50%) translateY(0);    opacity: 1; }
+    70%  { transform: translateX(-50%) translateY(18px); opacity: 0; }
+    71%  { transform: translateX(-50%) translateY(0);    opacity: 0; }
+    100% { transform: translateX(-50%) translateY(0);    opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60%  { transform: translateX(-7px); }
+    40%, 80%  { transform: translateX(7px); }
+}
+
+@keyframes drawLine {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes formSuccess {
+    0%   { transform: scale(0.9); opacity: 0; }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1);   opacity: 1; }
+}
+
+/* ── UTILITY CLASSES ────────────────────────────────────────── */
+.animate-fade-in { animation: fadeIn 0.8s forwards; }
+
+/* Shake — applied via JS for form errors */
+.shake { animation: shake 0.4s ease; }
+
+/* Float — for decorative elements */
+.float-animation { animation: float 4s ease-in-out infinite; }
+
+/* Loader */
 .loader {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid var(--primary-color);
+    border: 3px solid rgba(255,255,255,0.25);
+    border-top-color: var(--primary-color);
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
+    width: 24px; height: 24px;
     animation: spin 0.8s linear infinite;
     margin: 0 auto;
 }
+
+/* Form success */
+.form-success { animation: formSuccess 0.5s forwards; }

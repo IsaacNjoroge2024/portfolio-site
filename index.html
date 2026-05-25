@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Isaac Njoroge - FullStack Software Developer portfolio showcasing projects and skills in front-end technologies such as JavaScript, TypeScript, Next.js, and more and back-end technologies such as Java, Spring Boot, SQL, and more.">
-    <title>Isaac Njoroge | FullStack Software Developer</title>
+    <meta name="description" content="Isaac Njoroge — Software Developer specialising in backend engineering with Java, Spring Boot, Kotlin, and microservices. Also proficient in Next.js, React, and TypeScript on the frontend.">
+    <title>Isaac Njoroge | Software Developer</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,6 +18,16 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress-container">
+    <div class="scroll-progress" id="scroll-progress"></div>
+</div>
+
 <!-- Stars background -->
 <div id="stars-container" class="stars-container"></div>
 
@@ -26,168 +36,467 @@
     <nav class="container nav">
         <a href="#hero" class="logo">IN</a>
 
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item"><a href="#about"    class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#contact"  class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
+               class="nav-icon-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
+               class="nav-icon-link" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
         <div class="menu-btn" id="menu-btn">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
-        <ul class="nav-list" id="nav-list">
-            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
     </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════════════════ -->
 <section id="hero" class="hero">
-    <div class="container hero-content">
-        <h1 class="title">Hello, I'm Isaac.</h1>
-        <h2 class="subtitle">I'm a FullStack Software Developer with a love for the Backend.</h2>
-        <a href="#projects" class="cta-btn">View my work <i class="fas fa-arrow-right"></i></a>
-    </div>
+    <div class="container hero-wrapper">
+
+        <!-- Left: text content -->
+        <div class="hero-content">
+            <h1 class="title">Hello, I'm Isaac.</h1>
+
+            <h2 class="subtitle">
+                I build <span id="typed-text" class="typed-text"></span><span class="cursor-blink">|</span>
+            </h2>
+
+            <a href="#projects" class="cta-btn">
+                <span>View my work</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <div class="hero-chips">
+                <span class="hero-chip"><i class="fas fa-server"></i> Java + Spring Boot</span>
+                <span class="hero-chip"><i class="fas fa-layer-group"></i> Next.js + React</span>
+                <span class="hero-chip"><i class="fas fa-cubes"></i> Microservices</span>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
+                   class="hero-social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
+                   class="hero-social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:isaacnj02@gmail.com" class="hero-social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: terminal block (desktop only) -->
+        <div class="hero-terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">init Isaac.build()</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="success">✓</span>
+                    <span class="dim">Skills loaded</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="success">✓</span>
+                    <span class="dim">Backend: online</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="success">✓</span>
+                    <span class="dim">Frontend: online</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="success">✓</span>
+                    <span class="dim">Problem solver: active</span>
+                </div>
+                <div class="terminal-line" style="margin-top:0.5rem;">
+                    <span class="prompt">$</span>
+                    <span class="command">status --hire</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="success">→</span>
+                    <span class="status-ready">Open to opportunities</span>
+                </div>
+                <div class="terminal-line" style="margin-top:0.25rem;">
+                    <span class="terminal-cursor"></span>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.hero-wrapper -->
+
     <div class="scroll-indicator">
-        <div class="mouse"></div>
+        <i class="fas fa-chevron-down scroll-chevron"></i>
         <p>Scroll Down</p>
     </div>
 </section>
 
-<!-- About Section -->
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════════════════════ -->
 <section id="about" class="about">
-    <div class="container about-content">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-text">
-            <p>
-                Fully committed to the philosophy of life-long learning. I'm always ready for change and adopting new technologies. So, I am a fullstack developer primarily in the backend currently working with front-end and back-end technologies.
-            </p>
-            <p>
-                I do frontend work on my personal works, including working with TypeScript + ReactJS, Vanilla JavaScript, Next.js, and other frontend frameworks. As for my current employer, I work specifically in the back-end using Java, SpringBoot, and more.
-            </p>
-            <p>
-                The unique combination of creativity, logic, technology, and never running out of new things to discover, drives my excitement and passion for web development. When I'm not at my computer, I like to spend my time reading web comics, going to the gym, and playing/watching video games.
-            </p>
-        </div>
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">About Me</h2>
 
-        <div class="skills">
-            <h3 class="skills-title">Tech Stack</h3>
-            <div class="skills-grid">
-                <div class="skill-item" data-tooltip="Java">
-                    <i class="devicon-java-plain colored"></i>
+        <div class="about-grid">
+
+            <!-- Left: bio + timeline -->
+            <div class="about-left">
+                <div class="about-text">
+                    <p class="about-intro animate-fade-in-right">
+                        A backend-focused developer currently at SilverBirch Studios, where I build
+                        and maintain production-grade systems serving enterprise clients across
+                        healthcare and education. I care deeply about clean architecture, robust API
+                        design, and writing code that scales — and holds up under pressure.
+                    </p>
+                    <p class="animate-fade-in-right delay-200">
+                        My core expertise is Java and Spring Boot — microservices, event-driven
+                        architecture, RESTful APIs, and database engineering with PostgreSQL and
+                        Redis. On the frontend I'm proficient with Next.js, React, and TypeScript,
+                        and I've shipped full-stack applications from design through to deployment.
+                    </p>
+                    <p class="animate-fade-in-right delay-300">
+                        I'm fully committed to lifelong learning and genuinely excited by the pace
+                        at which this industry moves. Outside of code I enjoy reading web comics,
+                        hitting the gym, and gaming.
+                    </p>
                 </div>
-                <div class="skill-item" data-tooltip="Spring Boot">
-                    <i class="devicon-spring-plain colored"></i>
+
+                <div class="about-timeline animate-fade-in-right delay-400">
+                    <p class="timeline-heading">Journey</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">April 2024 – Present</span>
+                            <p>Software Developer — Backend · SilverBirch Studios. Building enterprise healthcare &amp; education platforms with Java, Spring Boot, and microservices.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">Sept 2022 – March 2024</span>
+                            <p>Freelance Contract Developer — delivering full-stack solutions for clients across multiple real-world projects.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2022</span>
+                            <p>Began the programming journey — dived deep into software development with full commitment and never looked back.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item" data-tooltip="MySQL">
-                    <i class="devicon-mysql-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="PostgreSQL">
-                    <i class="devicon-postgresql-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="React">
-                    <i class="devicon-react-original colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="TypeScript">
-                    <i class="devicon-typescript-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="Next.js">
-                    <i class="devicon-nextjs-original"></i>
-                </div>
-                <div class="skill-item" data-tooltip="JavaScript">
-                    <i class="devicon-javascript-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="Docker">
-                    <i class="devicon-docker-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="Git">
-                    <i class="devicon-git-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="REST API">
-                    <i class="devicon-nodejs-plain colored"></i>
-                </div>
-                <div class="skill-item" data-tooltip="Microservices">
-                    <i class="devicon-amazonwebservices-plain colored"></i>
-                </div>
-            </div>
-        </div>
+            </div><!-- /.about-left -->
+
+            <!-- Right: skills tabs -->
+            <div class="about-right animate-fade-in-left">
+                <h3 class="skills-title">Tech Stack</h3>
+
+                <div class="skills-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="backend">Backend</button>
+                        <button class="tab-btn" data-tab="frontend">Frontend</button>
+                        <button class="tab-btn" data-tab="tools">Tools</button>
+                    </div>
+
+                    <!-- Backend tab -->
+                    <div class="tab-panel active" id="tab-backend" data-stagger>
+                        <div class="skill-item" data-tooltip="Java">
+                            <i class="devicon-java-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Spring Boot">
+                            <i class="devicon-spring-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Kotlin">
+                            <i class="devicon-kotlin-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Python">
+                            <i class="devicon-python-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="PostgreSQL">
+                            <i class="devicon-postgresql-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="MySQL">
+                            <i class="devicon-mysql-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Redis">
+                            <i class="devicon-redis-plain colored"></i>
+                        </div>
+                    </div>
+
+                    <!-- Frontend tab -->
+                    <div class="tab-panel" id="tab-frontend" data-stagger>
+                        <div class="skill-item" data-tooltip="React">
+                            <i class="devicon-react-original colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="TypeScript">
+                            <i class="devicon-typescript-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Next.js">
+                            <i class="devicon-nextjs-original"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="JavaScript">
+                            <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tools tab -->
+                    <div class="tab-panel" id="tab-tools" data-stagger>
+                        <div class="skill-item" data-tooltip="Docker">
+                            <i class="devicon-docker-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Git">
+                            <i class="devicon-git-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="GitHub Actions">
+                            <i class="devicon-githubactions-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="AWS">
+                            <i class="devicon-amazonwebservices-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Gradle">
+                            <i class="devicon-gradle-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Linux">
+                            <i class="devicon-linux-plain"></i>
+                        </div>
+                    </div>
+                </div><!-- /.skills-tabs -->
+            </div><!-- /.about-right -->
+
+        </div><!-- /.about-grid -->
     </div>
 </section>
 
-<!-- Projects Section -->
+<!-- ═══════════════════════════════════════════════════════════
+     PROJECTS SECTION
+════════════════════════════════════════════════════════════ -->
 <section id="projects" class="projects">
     <div class="container projects-content">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title animate-fade-in-up">Projects</h2>
 
-        <div class="project-card in-progress">
-            <div class="project-image">
-                <img src="images/projects/Graph going up image.png" alt="Tradie Trading Bot Project" style="object-fit: cover; object-position: center; padding-top: 80px;">
-                <div class="in-progress-badge">
-                    <i class="fas fa-hard-hat"></i>
-                    <span>In Progress</span>
+        <!-- ── Tradie ──────────────────────────────────────────── -->
+        <div class="project-card in-progress animate-fade-in-up">
+
+            <div class="project-visual tradie-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Java">
+                            <i class="devicon-java-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Spring Boot">
+                            <i class="devicon-spring-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Python">
+                            <i class="devicon-python-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Docker">
+                            <i class="devicon-docker-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Kafka">
+                            <i class="fas fa-stream" style="color:#e94560;font-size:1.1rem;"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">Trading Bot · Microservices</div>
                 </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
             </div>
+
             <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status in-progress-status">
+                        <i class="fas fa-hard-hat"></i> In Progress
+                    </span>
+                    <span class="project-type-label">Personal Project</span>
+                </div>
+
                 <h3 class="project-title">Tradie</h3>
+
                 <p class="project-description">
-                    Tradie is a production-grade autonomous trading bot built on a microservices architecture. It ingests real-time signals from custom TradingView Pine Scripts, validates them through a strategy engine with strict risk rules, filters out high-risk market conditions using NLP-powered sentiment analysis, and executes bracket orders through Interactive Brokers — all while sending live trade alerts via Telegram.
+                    Tradie is an autonomous trading bot built on a production-grade microservices
+                    architecture. It processes real-time market signals, applies strategy and risk
+                    logic, and executes orders automatically — all with live Telegram alerts.
                 </p>
+
                 <ul class="project-features">
-                    <li><span class="feature-bullet">•</span> Microservices: Spring Boot 3.x (Java 21) API gateway, strategy engine & order executor</li>
-                    <li><span class="feature-bullet">•</span> Python/FastAPI sentiment service with VADER & FinBERT NLP models</li>
-                    <li><span class="feature-bullet">•</span> Apache Kafka for real-time inter-service event streaming</li>
-                    <li><span class="feature-bullet">•</span> TradingView Pine Script signals using Smart Money Concepts (FVG, Order Blocks, BOS/CHoCH)</li>
-                    <li><span class="feature-bullet">•</span> Interactive Brokers TWS API with bracket order execution & position management</li>
-                    <li><span class="feature-bullet">•</span> TimescaleDB, Redis, Docker, Prometheus & Grafana for data and monitoring</li>
+                    <li><span class="feature-bullet">•</span> Microservices architecture with event-driven inter-service communication</li>
+                    <li><span class="feature-bullet">•</span> NLP-powered sentiment analysis for intelligent market condition filtering</li>
+                    <li><span class="feature-bullet">•</span> Automated order execution with full risk management and real-time alerts</li>
                 </ul>
-                <div class="project-links">
-                    <a href="#" class="project-link disabled">
-                        <i class="fab fa-github"></i> Repository (Coming Soon)
-                    </a>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Java 21</span>
+                    <span class="tech-tag">Spring Boot 3</span>
+                    <span class="tech-tag">Apache Kafka</span>
+                    <span class="tech-tag">Python / FastAPI</span>
+                    <span class="tech-tag">TimescaleDB</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Docker</span>
                 </div>
             </div>
-        </div>
+        </div><!-- /.project-card Tradie -->
 
-        <div class="project-card">
-            <div class="project-image">
-                <img src="images/projects/happylandgardens.png" alt="Happyland Gardens Project">
+        <!-- ── Happyland Gardens ───────────────────────────────── -->
+        <div class="project-card animate-fade-in-up">
+
+            <div class="project-visual happyland-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Next.js">
+                            <i class="devicon-nextjs-original"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="TypeScript">
+                            <i class="devicon-typescript-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Tailwind CSS">
+                            <i class="devicon-tailwindcss-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Framer Motion">
+                            <i class="fas fa-wind" style="color:#10b981;font-size:1.1rem;"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Vercel">
+                            <i class="devicon-vercel-original"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">Event Venue · Web App</div>
+                </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
             </div>
+
             <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status complete-status">
+                        <i class="fas fa-check-circle"></i> Live
+                    </span>
+                    <span class="project-type-label">Client Project</span>
+                </div>
+
                 <h3 class="project-title">Happyland Gardens</h3>
+
                 <p class="project-description">
-                    Happyland Gardens is a responsive event venue website for a premier Nairobi-based venue. It showcases multiple event types with detailed galleries, enables booking inquiries via WhatsApp and phone integration, and is fully optimized for SEO with structured data and Google Analytics.
+                    Happyland Gardens is a responsive event venue website for a premier
+                    Nairobi-based venue. It showcases multiple event types with detailed galleries,
+                    enables booking inquiries via WhatsApp and phone integration, and is fully
+                    optimised for SEO with structured data and Google Analytics.
                 </p>
+
                 <ul class="project-features">
                     <li><span class="feature-bullet">•</span> Next.js 16 (App Router) with TypeScript and Tailwind CSS 4</li>
                     <li><span class="feature-bullet">•</span> Framer Motion animations with a custom design system</li>
                     <li><span class="feature-bullet">•</span> Interactive image gallery with slideshow modal for venue showcase</li>
-                    <li><span class="feature-bullet">•</span> Booking modal with WhatsApp, phone & Google Maps integration</li>
-                    <li><span class="feature-bullet">•</span> SEO-optimized with JSON-LD structured data, Open Graph & Twitter cards</li>
+                    <li><span class="feature-bullet">•</span> Booking modal with WhatsApp, phone &amp; Google Maps integration</li>
+                    <li><span class="feature-bullet">•</span> SEO-optimised with JSON-LD structured data, Open Graph &amp; Twitter cards</li>
                     <li><span class="feature-bullet">•</span> GDPR-compliant cookie consent, Google Analytics, deployed on Vercel</li>
                 </ul>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Next.js 16</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS 4</span>
+                    <span class="tech-tag">Framer Motion</span>
+                    <span class="tech-tag">SEO</span>
+                    <span class="tech-tag">Vercel</span>
+                </div>
+
                 <div class="project-links">
                     <a href="https://happyland-gardens-web.vercel.app/" class="project-link" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> Live Site
                     </a>
                 </div>
             </div>
-        </div>
+        </div><!-- /.project-card Happyland -->
 
-        <div class="project-card">
-            <div class="project-image">
-                <img src="images/projects/taskflow.png" alt="TaskFlow Project">
+        <!-- ── TaskFlow ────────────────────────────────────────── -->
+        <div class="project-card animate-fade-in-up">
+
+            <div class="project-visual taskflow-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Java">
+                            <i class="devicon-java-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Spring Boot">
+                            <i class="devicon-spring-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="JavaScript">
+                            <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="PostgreSQL">
+                            <i class="devicon-postgresql-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Gradle">
+                            <i class="devicon-gradle-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">Task Management · Full Stack</div>
+                </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
             </div>
+
             <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status complete-status">
+                        <i class="fas fa-check-circle"></i> Complete
+                    </span>
+                    <span class="project-type-label">Personal Project</span>
+                </div>
+
                 <h3 class="project-title">TaskFlow</h3>
+
                 <p class="project-description">
-                    TaskFlow is a modern, full-stack task management application with clean architecture and separation of concerns.
+                    TaskFlow is a modern, full-stack task management application built with clean
+                    architecture and clear separation of concerns between a Spring Boot backend and a
+                    Vanilla JS frontend.
                 </p>
+
                 <ul class="project-features">
                     <li><span class="feature-bullet">•</span> Frontend: Vanilla JavaScript, HTML5, CSS3</li>
                     <li><span class="feature-bullet">•</span> Backend: Spring Boot 3.4.4 with Java 17</li>
-                    <li><span class="feature-bullet">•</span> Database: H2/PostgreSQL</li>
-                    <li><span class="feature-bullet">•</span> Architecture: RESTful API</li>
-                    <li><span class="feature-bullet">•</span> Build Tool: Gradle 8.x with Liquibase</li>
+                    <li><span class="feature-bullet">•</span> Database: H2 (dev) / PostgreSQL (prod)</li>
+                    <li><span class="feature-bullet">•</span> Architecture: RESTful API with Liquibase migrations</li>
+                    <li><span class="feature-bullet">•</span> Build: Gradle 8.x</li>
                 </ul>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Java 17</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Vanilla JS</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Liquibase</span>
+                    <span class="tech-tag">Gradle</span>
+                </div>
+
                 <div class="project-links">
                     <a href="https://github.com/IsaacNjoroge2024/taskflow-frontend" class="project-link" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i> Frontend Repo
@@ -200,95 +509,193 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div><!-- /.project-card TaskFlow -->
 
-        <div class="project-card in-progress">
-            <div class="project-image">
-                <img src="images/projects/ai-cms.png" alt="AI CMS Project">
-                <div class="in-progress-badge">
-                    <i class="fas fa-hard-hat"></i>
-                    <span>In Progress</span>
+        <!-- ── Pash.ai ─────────────────────────────────────────── -->
+        <div class="project-card in-progress animate-fade-in-up">
+
+            <div class="project-visual pashai-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Next.js">
+                            <i class="devicon-nextjs-original"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="TypeScript">
+                            <i class="devicon-typescript-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="OpenAI">
+                            <i class="fas fa-microchip" style="color:#a78bfa;font-size:1.1rem;"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Supabase / PostgreSQL">
+                            <i class="devicon-postgresql-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">AI-Powered CMS · SaaS</div>
                 </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
             </div>
+
             <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status in-progress-status">
+                        <i class="fas fa-hard-hat"></i> In Progress
+                    </span>
+                    <span class="project-type-label">Personal Project</span>
+                </div>
+
                 <h3 class="project-title">Pash.ai</h3>
+
                 <p class="project-description">
-                    A modern Content Management System with AI-assisted content creation, SEO optimization, and automated publishing workflows across multiple platforms.
+                    A modern Content Management System with AI-assisted content creation, SEO
+                    optimisation, and automated publishing workflows across multiple platforms.
                 </p>
+
                 <ul class="project-features">
-                    <li><span class="feature-bullet">•</span> Authentication & role-based access control</li>
+                    <li><span class="feature-bullet">•</span> Authentication &amp; role-based access control</li>
                     <li><span class="feature-bullet">•</span> AI writing assistance with OpenAI GPT-4 API</li>
                     <li><span class="feature-bullet">•</span> Multi-tenant architecture supporting multiple blogs</li>
                     <li><span class="feature-bullet">•</span> Publishing automation with scheduled posts</li>
                     <li><span class="feature-bullet">•</span> Next.js, tRPC, Supabase PostgreSQL</li>
                 </ul>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">tRPC</span>
+                    <span class="tech-tag">OpenAI API</span>
+                    <span class="tech-tag">Supabase</span>
+                </div>
+
                 <div class="project-links">
                     <a href="#" class="project-link disabled">
-                        <i class="fab fa-github"></i> Finished Repository (Coming Soon)
+                        <i class="fab fa-github"></i> Repository (Coming Soon)
                     </a>
                 </div>
             </div>
-        </div>
+        </div><!-- /.project-card Pash.ai -->
+
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════════════════════ -->
 <section id="contact" class="contact">
-    <div class="container contact-content">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Contact</h2>
 
-        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms required fields -->
-            <input type="hidden" name="access_key" value="5afc6540-f69d-46f9-8753-8ba4579613fd">
-            <input type="hidden" name="subject" value="New message from portfolio website">
-            <input type="hidden" name="redirect" value="https://isaacnjoroge.com/thank-you.html">
+        <div class="contact-grid">
 
-            <!-- Honeypot field to prevent spam -->
-            <input type="hidden" name="honeypot" id="honeypot" style="display:none">
+            <!-- Left: form -->
+            <div class="animate-fade-in-right">
+                <p class="contact-text">
+                    Have a question or want to work together? Leave your details and I'll get back
+                    to you as soon as possible.
+                </p>
 
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <form id="contact-form" class="contact-form"
+                      action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms required fields -->
+                    <input type="hidden" name="access_key" value="5afc6540-f69d-46f9-8753-8ba4579613fd">
+                    <input type="hidden" name="subject" value="New message from portfolio website">
+                    <input type="hidden" name="redirect" value="https://isaacnjoroge.com/thank-you.html">
+
+                    <!-- Honeypot -->
+                    <input type="hidden" name="honeypot" id="honeypot" style="display:none">
+
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <div class="btn-spinner"></div>
+                    </button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
 
-        <div class="contact-alt">
-            <p>Or reach me directly at:</p>
-            <a href="mailto:isaacnj02@gmail.com" class="email-link">
-                <i class="fas fa-envelope"></i> isaacnj02@gmail.com
-            </a>
-        </div>
+            <!-- Right: contact info -->
+            <div class="contact-info animate-fade-in-left">
+                <div class="availability-badge">
+                    <div class="avail-dot"></div>
+                    <span class="avail-text">Open to opportunities</span>
+                </div>
 
-        <div class="social-links">
-            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" class="social-link">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:isaacnj02@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
+                <div class="contact-info-block">
+                    <span class="contact-info-label">Email</span>
+                    <a href="mailto:isaacnj02@gmail.com" class="contact-email-link">
+                        <i class="fas fa-envelope"></i>
+                        isaacnj02@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-info-block">
+                    <span class="contact-info-label">Connect</span>
+                    <div class="social-links">
+                        <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
+                           class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
+                           class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:isaacnj02@gmail.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-info-block">
+                    <span class="contact-info-label">A thought</span>
+                    <p class="contact-tagline">"Let's build something great together."</p>
+                </div>
+            </div><!-- /.contact-info -->
+
+        </div><!-- /.contact-grid -->
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
     <div class="container footer-content">
-        <p>© 2025 Isaac Njoroge. All rights reserved.</p>
-        <p>Built with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+        <div class="footer-social">
+            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:isaacnj02@gmail.com" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p class="footer-copy">
+            © <span id="footer-year"></span> Isaac Njoroge. Built with
+            <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i>
+        </p>
+        <p class="footer-stack">Vanilla JS · HTML5 · CSS3</p>
     </div>
 </footer>
 
-<!-- Thank You Page for Form Submission -->
+<!-- Thank You Modal -->
 <div id="thank-you" class="thank-you-message">
     <div class="thank-you-content">
         <i class="fas fa-check-circle"></i>
@@ -300,8 +707,10 @@
 </div>
 
 <!-- Scripts -->
-<script src="js/main.js"></script>
 <script src="js/stars.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/typing.js"></script>
+<script src="js/main.js"></script>
 <script src="js/form.js"></script>
 </body>
 </html>
