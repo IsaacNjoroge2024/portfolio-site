@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillTabs();
     initFooterYear();
     initStaggerIndex();
+    initCardTilt();
 });
 
 /* ── Scroll: header shrink + active nav ──────────────────────── */
@@ -34,9 +35,8 @@ function initScrollListener() {
         // Active nav link
         let current = '';
         sections.forEach(section => {
-            const sectionTop    = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - window.innerHeight / 3)) {
                 current = section.getAttribute('id');
             }
         });
@@ -52,9 +52,21 @@ function initScrollListener() {
 
 /* ── Mobile menu toggle ───────────────────────────────────────── */
 function initMenuToggle() {
+    const syncExpanded = () => {
+        menuBtn.setAttribute('aria-expanded', navList.classList.contains('active'));
+    };
+
     menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('active');
         navList.classList.toggle('active');
+        syncExpanded();
+    });
+
+    menuBtn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            menuBtn.click();
+        }
     });
 
     // Close on outside click
@@ -64,6 +76,7 @@ function initMenuToggle() {
             navList.classList.contains('active')) {
             menuBtn.classList.remove('active');
             navList.classList.remove('active');
+            syncExpanded();
         }
     });
 
@@ -73,6 +86,7 @@ function initMenuToggle() {
             if (navList.classList.contains('active')) {
                 menuBtn.classList.remove('active');
                 navList.classList.remove('active');
+                syncExpanded();
             }
         });
     });
@@ -171,6 +185,29 @@ function initSkillTabs() {
                     panel.classList.add('active');
                 }
             });
+        });
+    });
+}
+
+/* ── Project card tilt ───────────────────────────────────────── */
+function initCardTilt() {
+    if (window.matchMedia('(hover: none)').matches ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const MAX_TILT = 4;
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width  - 0.5;
+            const py = (e.clientY - rect.top)  / rect.height - 0.5;
+            card.classList.add('tilting');
+            card.style.setProperty('--tilt-x', (-py).toFixed(3));
+            card.style.setProperty('--tilt-y', px.toFixed(3));
+            card.style.setProperty('--tilt-deg', `${(Math.hypot(px, py) * MAX_TILT).toFixed(2)}deg`);
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--tilt-deg', '0deg');
         });
     });
 }

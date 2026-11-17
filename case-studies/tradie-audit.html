@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: auditing the Tradie trading platform and fixing a bug that could mark a position closed before the broker confirmed it.">
+    <link rel="canonical" href="https://isaacnjoroge.com/case-studies/tradie-audit.html">
+    <title>Tradie Audit Case Study | Isaac Njoroge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="case-study-page">
+<div id="stars-container" class="stars-container"></div>
+
+<main class="container case-study">
+    <a href="../index.html#projects" class="case-back"><i class="fas fa-arrow-left"></i> Back to projects</a>
+
+    <h1 class="case-title">Auditing Tradie: never report a state the broker hasn't confirmed</h1>
+    <p class="case-lead">Tradie is my event-driven trading platform. Nobody gave me a spec for the audit, so I read the whole codebase and decided what mattered most.</p>
+
+    <section class="case-section">
+        <h2>The problem</h2>
+        <p>A trading system acts on money, so its idea of the world has to match the broker's. I audited the full codebase looking for places where the two could disagree.</p>
+    </section>
+
+    <section class="case-section">
+        <h2>The finding</h2>
+        <p>Tradie could mark a position as closed before the broker had confirmed the fill. If the close order was rejected or delayed, the system would believe it was flat while the broker still held the position.</p>
+    </section>
+
+    <section class="case-section">
+        <h2>The fix</h2>
+        <p>I added a CLOSING state. A position stays in CLOSING until the broker's snapshot confirms it is gone, and only then becomes CLOSED.</p>
+        <figure class="case-diagram">
+            <svg viewBox="0 0 640 230" role="img" aria-labelledby="diagram-title diagram-desc">
+                <title id="diagram-title">Position states before and after the fix</title>
+                <desc id="diagram-desc">Before: OPEN goes straight to CLOSED. After: OPEN goes to CLOSING, then to CLOSED once the broker confirms.</desc>
+                <defs>
+                    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                        <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/>
+                    </marker>
+                </defs>
+
+                <text class="note" x="20" y="22" style="text-anchor:start">Before</text>
+                <rect class="state-box" x="60" y="40" width="130" height="46" rx="10"/>
+                <text x="125" y="69">OPEN</text>
+                <line class="arrow" x1="190" y1="63" x2="440" y2="63" marker-end="url(#arrowhead)"/>
+                <text class="note" x="315" y="55">close requested</text>
+                <rect class="state-box bad" x="450" y="40" width="130" height="46" rx="10"/>
+                <text x="515" y="69">CLOSED</text>
+
+                <text class="note" x="20" y="128" style="text-anchor:start">After</text>
+                <rect class="state-box" x="60" y="146" width="130" height="46" rx="10"/>
+                <text x="125" y="175">OPEN</text>
+                <line class="arrow" x1="190" y1="169" x2="255" y2="169" marker-end="url(#arrowhead)"/>
+                <rect class="state-box" x="260" y="146" width="130" height="46" rx="10"/>
+                <text x="325" y="175">CLOSING</text>
+                <line class="arrow" x1="390" y1="169" x2="445" y2="169" marker-end="url(#arrowhead)"/>
+                <text class="note" x="418" y="140">broker confirms</text>
+                <rect class="state-box good" x="450" y="146" width="130" height="46" rx="10"/>
+                <text x="515" y="175">CLOSED</text>
+            </svg>
+            <figcaption>A position now becomes CLOSED only after the broker confirms it.</figcaption>
+        </figure>
+    </section>
+
+    <section class="case-section">
+        <h2>Other findings</h2>
+        <ul>
+            <li>A confidence-scale mismatch between services, which I fixed.</li>
+            <li>Telegram commands had no authentication, so I added chat-ID checks.</li>
+            <li>The remaining findings went into a prioritized TODO list that I work through in order.</li>
+        </ul>
+    </section>
+
+    <section class="case-section">
+        <h2>The lesson</h2>
+        <p>The system should never report a state the broker hasn't confirmed. I check that with tests, and by reconciling Tradie's positions against the broker's data.</p>
+        <p><a href="https://github.com/IsaacNjoroge2024/tradie-bot" target="_blank" rel="noopener"><i class="fab fa-github"></i> View the Tradie repository</a></p>
+    </section>
+</main>
+
+<script src="../js/stars.js"></script>
+</body>
+</html>

@@ -14,7 +14,9 @@ function initTyping() {
     const phrases = [
         'production-grade backends.',
         'microservice architectures.',
-        'fullstack web apps.',
+        'Java and PHP backends.',
+        'full stack web apps.',
+        'React and Next.js frontends.',
         'clean, scalable APIs.',
         'things that actually work.'
     ];
@@ -23,6 +25,11 @@ function initTyping() {
     const ERASE_SPEED  = 38;   // ms per character while erasing
     const PAUSE_AFTER  = 1800; // ms to pause at end of phrase
     const PAUSE_BEFORE = 400;  // ms to pause before typing next phrase
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = phrases[0];
+        return;
+    }
 
     let phraseIndex = 0;
     let charIndex   = 0;

@@ -2,9 +2,11 @@
  * Starry background — animated stars + occasional shooting stars
  */
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 document.addEventListener('DOMContentLoaded', () => {
     createStars();
-    scheduleShootingStars();
+    if (!reduceMotion.matches) scheduleShootingStars();
 });
 
 /* ── Regular stars ───────────────────────────────────────────── */
@@ -14,7 +16,7 @@ function createStars() {
 
     container.innerHTML = '';
 
-    const count = 400;
+    const count = reduceMotion.matches ? 0 : (window.innerWidth < 768 ? 120 : 400);
     for (let i = 0; i < count; i++) {
         createStar(container);
     }

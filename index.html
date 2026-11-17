@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Isaac Njoroge — Software Developer specialising in backend engineering with Java, Spring Boot, Kotlin, and microservices. Also proficient in Next.js, React, and TypeScript on the frontend.">
-    <title>Isaac Njoroge | Software Developer</title>
+    <meta name="description" content="Isaac Njoroge — Full Stack Software Developer with 4+ years of experience building production systems with Java, Spring Boot, React, Next.js and TypeScript. Open to remote and global opportunities.">
+    <meta name="theme-color" content="#0a0a14">
+    <link rel="canonical" href="https://isaacnjoroge.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Isaac Njoroge | Full Stack Software Developer">
+    <meta property="og:description" content="Full stack developer building production systems with Java, Spring Boot, React, Next.js and TypeScript.">
+    <meta property="og:url" content="https://isaacnjoroge.com/">
+    <meta property="og:image" content="https://isaacnjoroge.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Isaac Njoroge",
+     "jobTitle":"Full Stack Software Developer","url":"https://isaacnjoroge.com/",
+     "sameAs":["https://github.com/IsaacNjoroge2024","https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/"]}
+    </script>
+    <title>Isaac Njoroge | Full Stack Software Developer</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,6 +31,8 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+
+<a href="#about" class="skip-link">Skip to content</a>
 
 <!-- Scroll progress bar -->
 <div class="scroll-progress-container">
@@ -33,23 +48,28 @@
         <a href="#hero" class="logo">IN</a>
 
         <ul class="nav-list" id="nav-list">
-            <li class="nav-item"><a href="#about"    class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="#contact"  class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="#about"      class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+            <li class="nav-item"><a href="#projects"   class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#contact"    class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
+            <a href="files/Isaac-Njoroge-Resume.pdf" class="resume-btn" download>
+                <i class="fas fa-download"></i> Resume
+            </a>
             <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
-               class="nav-icon-link" title="GitHub">
+               class="nav-icon-link" title="GitHub" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
-               class="nav-icon-link" title="LinkedIn">
+               class="nav-icon-link" title="LinkedIn" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
 
-        <div class="menu-btn" id="menu-btn">
+        <div class="menu-btn" id="menu-btn" role="button" tabindex="0"
+             aria-label="Toggle menu" aria-controls="nav-list" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -71,10 +91,16 @@
                 I build <span id="typed-text" class="typed-text"></span><span class="cursor-blink">|</span>
             </h2>
 
-            <a href="#projects" class="cta-btn">
-                <span>View my work</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="hero-cta-row">
+                <a href="#projects" class="cta-btn">
+                    <span>View my work</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="files/Isaac-Njoroge-Resume.pdf" class="cta-btn secondary" download>
+                    <span>Download resume</span>
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
 
             <div class="hero-chips">
                 <span class="hero-chip"><i class="fas fa-server"></i> Java + Spring Boot</span>
@@ -84,14 +110,14 @@
 
             <div class="hero-socials">
                 <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
-                   class="hero-social-link" title="GitHub">
+                   class="hero-social-link" title="GitHub" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
-                   class="hero-social-link" title="LinkedIn">
+                   class="hero-social-link" title="LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:isaacnj02@gmail.com" class="hero-social-link" title="Email">
+                <a href="mailto:isaacnj02@gmail.com" class="hero-social-link" title="Email" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -160,16 +186,19 @@
             <div class="about-left">
                 <div class="about-text">
                     <p class="about-intro animate-fade-in-right">
-                        A backend-focused developer currently at SilverBirch Studios, where I build
-                        and maintain production-grade systems serving enterprise clients across
-                        healthcare and education. I care deeply about clean architecture, robust API
-                        design, and writing code that scales — and holds up under pressure.
+                        A full stack developer currently at SilverBirch Studios, where I build and
+                        maintain production systems for enterprise clients across healthcare,
+                        education and live events. I own features end to end, from the Spring Boot
+                        endpoint and database migration to the React and Next.js screen that uses
+                        it. I care about clean architecture, secure API design, and code that holds
+                        up under pressure.
                     </p>
                     <p class="animate-fade-in-right delay-200">
-                        My core expertise is Java and Spring Boot — microservices, event-driven
-                        architecture, RESTful APIs, and database engineering with PostgreSQL and
-                        Redis. On the frontend I'm proficient with Next.js, React, and TypeScript,
-                        and I've shipped full-stack applications from design through to deployment.
+                        My core is Java and Spring Boot, with PHP as well: microservices, RESTful APIs, authentication
+                        and authorization, and databases with PostgreSQL, MySQL and Redis. On the
+                        frontend I work with React, Next.js and TypeScript. I test what I ship,
+                        review pull requests carefully, and use AI tools every day while checking
+                        their output.
                     </p>
                     <p class="animate-fade-in-right delay-300">
                         I'm fully committed to lifelong learning and genuinely excited by the pace
@@ -183,15 +212,15 @@
                     <div class="timeline">
                         <div class="timeline-item">
                             <span class="timeline-year">April 2024 – Present</span>
-                            <p>Software Developer — Backend · SilverBirch Studios. Building enterprise healthcare &amp; education platforms with Java, Spring Boot, and microservices.</p>
+                            <p>Software Developer · SilverBirch Studios. Joined as a backend intern and went full time in August 2024. Building enterprise platforms with Java, Spring Boot and microservices, plus React and Next.js frontends.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-year">Sept 2022 – March 2024</span>
-                            <p>Freelance Contract Developer — delivering full-stack solutions for clients across multiple real-world projects.</p>
+                            <p>Freelance Developer — external full stack contractor for clients, delivering APIs, databases and web apps, including complete applications handed over to client teams.</p>
                         </div>
                         <div class="timeline-item">
-                            <span class="timeline-year">2022</span>
-                            <p>Began the programming journey — dived deep into software development with full commitment and never looked back.</p>
+                            <span class="timeline-year">2020 – 2025</span>
+                            <p>Started coding in my ICT diploma (Pan African Christian University, 2023), then earned a B.Sc. in Applied Computing at KCA University (2025).</p>
                         </div>
                     </div>
                 </div>
@@ -216,11 +245,17 @@
                         <div class="skill-item" data-tooltip="Spring Boot">
                             <i class="devicon-spring-plain colored"></i>
                         </div>
+                        <div class="skill-item" data-tooltip="PHP">
+                            <i class="devicon-php-plain colored"></i>
+                        </div>
                         <div class="skill-item" data-tooltip="Kotlin">
                             <i class="devicon-kotlin-plain colored"></i>
                         </div>
                         <div class="skill-item" data-tooltip="Python">
                             <i class="devicon-python-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Apache Kafka">
+                            <i class="devicon-apachekafka-original"></i>
                         </div>
                         <div class="skill-item" data-tooltip="PostgreSQL">
                             <i class="devicon-postgresql-plain colored"></i>
@@ -242,10 +277,19 @@
                             <i class="devicon-typescript-plain colored"></i>
                         </div>
                         <div class="skill-item" data-tooltip="Next.js">
-                            <i class="devicon-nextjs-original"></i>
+                            <i class="devicon-nextjs-plain"></i>
                         </div>
                         <div class="skill-item" data-tooltip="JavaScript">
                             <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="HTML5">
+                            <i class="devicon-html5-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="CSS3">
+                            <i class="devicon-css3-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-tooltip="Tailwind CSS">
+                            <i class="devicon-tailwindcss-plain colored"></i>
                         </div>
                     </div>
 
@@ -274,6 +318,49 @@
             </div><!-- /.about-right -->
 
         </div><!-- /.about-grid -->
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE SECTION
+════════════════════════════════════════════════════════════ -->
+<section id="experience" class="experience">
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Experience</h2>
+
+        <div class="experience-list">
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-role">Software Developer</h3>
+                        <p class="experience-company">SilverBirch Studios</p>
+                    </div>
+                    <span class="experience-date">Apr 2024 – Present</span>
+                </div>
+                <ul class="experience-points">
+                    <li><span class="feature-bullet">•</span> Own LiveScene features end to end, from the Spring Boot endpoint and migration to the React and Next.js screen, with Jest tests and CI on every pull request</li>
+                    <li><span class="feature-bullet">•</span> Fixed authorization flaws in a healthcare insurance platform: RBAC on every endpoint, custom permission evaluators and per-role security tests</li>
+                    <li><span class="feature-bullet">•</span> Implemented a Redis caching system across our microservice projects</li>
+                    <li><span class="feature-bullet">•</span> Cut the CoLab integration test suite from 30+ minutes to about 2 minutes (93%)</li>
+                    <li><span class="feature-bullet">•</span> Fixed a reconciliation job's drift detection and added retry and rollback around Cognito user creation</li>
+                </ul>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-role">Freelance Developer</h3>
+                        <p class="experience-company">External contractor</p>
+                    </div>
+                    <span class="experience-date">Sep 2022 – Mar 2024</span>
+                </div>
+                <ul class="experience-points">
+                    <li><span class="feature-bullet">•</span> Built APIs, data models and web apps for clients, including complete applications that client teams then took over</li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 </section>
 
@@ -328,15 +415,18 @@
                 <h3 class="project-title">Tradie</h3>
 
                 <p class="project-description">
-                    Tradie is an autonomous trading bot built on a production-grade microservices
-                    architecture. It processes real-time market signals, applies strategy and risk
-                    logic, and executes orders automatically — all with live Telegram alerts.
+                    Tradie is an event-driven trading platform: Java 21 and Spring Boot
+                    microservices over Kafka, with Python services for news sentiment, market-regime
+                    detection and backtesting. It applies strategy and risk checks, places bracket
+                    orders through the Interactive Brokers API, and reports through Telegram alerts
+                    and commands.
                 </p>
 
                 <ul class="project-features">
-                    <li><span class="feature-bullet">•</span> Microservices architecture with event-driven inter-service communication</li>
-                    <li><span class="feature-bullet">•</span> NLP-powered sentiment analysis for intelligent market condition filtering</li>
-                    <li><span class="feature-bullet">•</span> Automated order execution with full risk management and real-time alerts</li>
+                    <li><span class="feature-bullet">•</span> Kafka-based microservices with Resilience4j circuit breakers and TimescaleDB storage</li>
+                    <li><span class="feature-bullet">•</span> FinBERT sentiment, HMM regime detection and Monte Carlo backtesting in Python/FastAPI services</li>
+                    <li><span class="feature-bullet">•</span> Risk controls: correlation filter, spread monitor, circuit breaker and position limits</li>
+                    <li><span class="feature-bullet">•</span> Audit-driven fixes, such as a CLOSING state so a position is never marked closed before the broker confirms</li>
                 </ul>
 
                 <div class="project-tech-tags">
@@ -347,6 +437,15 @@
                     <span class="tech-tag">TimescaleDB</span>
                     <span class="tech-tag">Redis</span>
                     <span class="tech-tag">Docker</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/IsaacNjoroge2024/tradie-bot" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Repository
+                    </a>
+                    <a href="case-studies/tradie-audit.html" class="project-link live-link">
+                        <i class="fas fa-file-alt"></i> Read the case study
+                    </a>
                 </div>
             </div>
         </div><!-- /.project-card Tradie -->
@@ -362,7 +461,7 @@
                     </div>
                     <div class="visual-tech-icons">
                         <div class="visual-tech-icon" title="Next.js">
-                            <i class="devicon-nextjs-original"></i>
+                            <i class="devicon-nextjs-plain"></i>
                         </div>
                         <div class="visual-tech-icon" title="TypeScript">
                             <i class="devicon-typescript-plain colored"></i>
@@ -407,7 +506,7 @@
                     <li><span class="feature-bullet">•</span> Interactive image gallery with slideshow modal for venue showcase</li>
                     <li><span class="feature-bullet">•</span> Booking modal with WhatsApp, phone &amp; Google Maps integration</li>
                     <li><span class="feature-bullet">•</span> SEO-optimised with JSON-LD structured data, Open Graph &amp; Twitter cards</li>
-                    <li><span class="feature-bullet">•</span> GDPR-compliant cookie consent, Google Analytics, deployed on Vercel</li>
+                    <li><span class="feature-bullet">•</span> Cookie consent banner, Google Analytics, deployed on Vercel</li>
                 </ul>
 
                 <div class="project-tech-tags">
@@ -443,11 +542,11 @@
                         <div class="visual-tech-icon" title="Spring Boot">
                             <i class="devicon-spring-plain colored"></i>
                         </div>
-                        <div class="visual-tech-icon" title="JavaScript">
-                            <i class="devicon-javascript-plain colored"></i>
+                        <div class="visual-tech-icon" title="React">
+                            <i class="devicon-react-original colored"></i>
                         </div>
-                        <div class="visual-tech-icon" title="PostgreSQL">
-                            <i class="devicon-postgresql-plain colored"></i>
+                        <div class="visual-tech-icon" title="MySQL">
+                            <i class="devicon-mysql-plain colored"></i>
                         </div>
                         <div class="visual-tech-icon" title="Gradle">
                             <i class="devicon-gradle-plain colored"></i>
@@ -471,66 +570,65 @@
                 <h3 class="project-title">TaskFlow</h3>
 
                 <p class="project-description">
-                    TaskFlow is a modern, full-stack task management application built with clean
-                    architecture and clear separation of concerns between a Spring Boot backend and a
-                    Vanilla JS frontend.
+                    TaskFlow is a full-stack task and project management application: a Spring Boot
+                    REST API secured with JWT, and a React and TypeScript frontend that receives live
+                    updates over WebSocket.
                 </p>
 
                 <ul class="project-features">
-                    <li><span class="feature-bullet">•</span> Frontend: Vanilla JavaScript, HTML5, CSS3</li>
-                    <li><span class="feature-bullet">•</span> Backend: Spring Boot 3.4.4 with Java 17</li>
-                    <li><span class="feature-bullet">•</span> Database: H2 (dev) / PostgreSQL (prod)</li>
-                    <li><span class="feature-bullet">•</span> Architecture: RESTful API with Liquibase migrations</li>
-                    <li><span class="feature-bullet">•</span> Build: Gradle 8.x</li>
+                    <li><span class="feature-bullet">•</span> Frontend: React 19, TypeScript, Vite and Tailwind CSS 4, with Zustand state and React Hook Form + Zod validation</li>
+                    <li><span class="feature-bullet">•</span> Backend: Spring Boot 3.4.4 on Java 17 with Spring Security, JWT authentication and role-based users</li>
+                    <li><span class="feature-bullet">•</span> Real-time task updates through STOMP over WebSocket</li>
+                    <li><span class="feature-bullet">•</span> MySQL with Liquibase migrations, Gradle build and Testcontainers-based tests</li>
                 </ul>
 
                 <div class="project-tech-tags">
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
                     <span class="tech-tag">Java 17</span>
                     <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Vanilla JS</span>
-                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">WebSocket</span>
+                    <span class="tech-tag">MySQL</span>
                     <span class="tech-tag">Liquibase</span>
-                    <span class="tech-tag">Gradle</span>
                 </div>
 
                 <div class="project-links">
-                    <a href="https://github.com/IsaacNjoroge2024/taskflow-frontend" class="project-link" target="_blank" rel="noopener">
+                    <a href="https://github.com/IsaacNjoroge2024/task-manager-frontend" class="project-link" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i> Frontend Repo
                     </a>
-                    <a href="https://github.com/IsaacNjoroge2024/taskflow-backend" class="project-link" target="_blank" rel="noopener">
+                    <a href="https://github.com/IsaacNjoroge2024/task-manager-backend" class="project-link" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i> Backend Repo
-                    </a>
-                    <a href="#" class="project-link live-link">
-                        <i class="fas fa-external-link-alt"></i> Live Site (Coming Soon)
                     </a>
                 </div>
             </div>
         </div><!-- /.project-card TaskFlow -->
 
-        <!-- ── Pash.ai ─────────────────────────────────────────── -->
+        <!-- ── Tradie-Lite ── -->
         <div class="project-card in-progress animate-fade-in-up">
 
-            <div class="project-visual pashai-theme">
+            <div class="project-visual tradielite-theme">
                 <div class="visual-glow"></div>
                 <div class="visual-content">
                     <div class="visual-main-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div class="visual-tech-icons">
-                        <div class="visual-tech-icon" title="Next.js">
-                            <i class="devicon-nextjs-original"></i>
+                        <div class="visual-tech-icon" title="Python">
+                            <i class="devicon-python-plain colored"></i>
                         </div>
-                        <div class="visual-tech-icon" title="TypeScript">
-                            <i class="devicon-typescript-plain colored"></i>
+                        <div class="visual-tech-icon" title="TradingView">
+                            <i class="fas fa-chart-area"></i>
                         </div>
-                        <div class="visual-tech-icon" title="OpenAI">
-                            <i class="fas fa-microchip" style="color:#a78bfa;font-size:1.1rem;"></i>
+                        <div class="visual-tech-icon" title="MetaTrader 5">
+                            <i class="fas fa-exchange-alt"></i>
                         </div>
-                        <div class="visual-tech-icon" title="Supabase / PostgreSQL">
-                            <i class="devicon-postgresql-plain colored"></i>
+                        <div class="visual-tech-icon" title="MCP">
+                            <i class="fas fa-plug"></i>
                         </div>
                     </div>
-                    <div class="visual-label">AI-Powered CMS · SaaS</div>
+                    <div class="visual-label">LLM Agent · Rule-Based Trading</div>
                 </div>
                 <div class="visual-shape vs-1"></div>
                 <div class="visual-shape vs-2"></div>
@@ -545,36 +643,146 @@
                     <span class="project-type-label">Personal Project</span>
                 </div>
 
-                <h3 class="project-title">Pash.ai</h3>
+                <h3 class="project-title">Tradie-Lite</h3>
 
                 <p class="project-description">
-                    A modern Content Management System with AI-assisted content creation, SEO
-                    optimisation, and automated publishing workflows across multiple platforms.
+                    Tradie-Lite is an LLM-driven workflow for EUR/USD M5 scalping. A five-step pre-trade gate checks the setup, indicators, the economic calendar and risk before any order is considered, using TradingView and MetaTrader 5 through MCP servers.
                 </p>
 
                 <ul class="project-features">
-                    <li><span class="feature-bullet">•</span> Authentication &amp; role-based access control</li>
-                    <li><span class="feature-bullet">•</span> AI writing assistance with OpenAI GPT-4 API</li>
-                    <li><span class="feature-bullet">•</span> Multi-tenant architecture supporting multiple blogs</li>
-                    <li><span class="feature-bullet">•</span> Publishing automation with scheduled posts</li>
-                    <li><span class="feature-bullet">•</span> Next.js, tRPC, Supabase PostgreSQL</li>
+                    <li><span class="feature-bullet">•</span> Rule-based strategy with a Pine Script indicator; the LLM validates each setup instead of predicting prices</li>
+                    <li><span class="feature-bullet">•</span> Local economic-calendar check to avoid trading into high-impact news</li>
+                    <li><span class="feature-bullet">•</span> Post-mortems on skipped setups drive rule changes, for example moving an RSI filter from slope to zone</li>
                 </ul>
 
                 <div class="project-tech-tags">
-                    <span class="tech-tag">Next.js</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">tRPC</span>
-                    <span class="tech-tag">OpenAI API</span>
-                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Pine Script</span>
+                    <span class="tech-tag">MCP</span>
+                    <span class="tech-tag">TradingView</span>
+                    <span class="tech-tag">MetaTrader 5</span>
+                    <span class="tech-tag">LLM</span>
                 </div>
 
                 <div class="project-links">
-                    <a href="#" class="project-link disabled">
-                        <i class="fab fa-github"></i> Repository (Coming Soon)
+                    <a href="https://github.com/IsaacNjoroge2024/tradie-lite" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Repository
                     </a>
                 </div>
             </div>
-        </div><!-- /.project-card Pash.ai -->
+        </div><!-- /.project-card Tradie-Lite -->
+
+        <!-- ── Static ── -->
+        <div class="project-card in-progress animate-fade-in-up">
+
+            <div class="project-visual static-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Roblox Luau">
+                            <i class="devicon-lua-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">Co-op Horror · Roblox</div>
+                </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
+            </div>
+
+            <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status in-progress-status">
+                        <i class="fas fa-hard-hat"></i> In Progress
+                    </span>
+                    <span class="project-type-label">Personal Project</span>
+                </div>
+
+                <h3 class="project-title">Static</h3>
+
+                <p class="project-description">
+                    Static is a co-op survival horror game for Roblox (1–4 players). Players use elemental abilities, Fire and Water, to solve puzzles across a five-room floor while evading an AI entity called The Hum.
+                </p>
+
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Two-place Roblox universe: a 50-player hub lobby and a 4-player run server</li>
+                    <li><span class="feature-bullet">•</span> Written in Luau with a scripted build pipeline</li>
+                </ul>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Luau</span>
+                    <span class="tech-tag">Roblox</span>
+                    <span class="tech-tag">Game Design</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/IsaacNjoroge2024/static" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Repository
+                    </a>
+                </div>
+            </div>
+        </div><!-- /.project-card Static -->
+
+        <!-- ── Kilimo Bora Connect ── -->
+        <div class="project-card animate-fade-in-up">
+
+            <div class="project-visual kilimo-theme">
+                <div class="visual-glow"></div>
+                <div class="visual-content">
+                    <div class="visual-main-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="visual-tech-icons">
+                        <div class="visual-tech-icon" title="Kotlin">
+                            <i class="devicon-kotlin-plain colored"></i>
+                        </div>
+                        <div class="visual-tech-icon" title="Android">
+                            <i class="devicon-android-plain colored"></i>
+                        </div>
+                    </div>
+                    <div class="visual-label">Android App · Prototype</div>
+                </div>
+                <div class="visual-shape vs-1"></div>
+                <div class="visual-shape vs-2"></div>
+                <div class="visual-shape vs-3"></div>
+            </div>
+
+            <div class="project-details">
+                <div class="project-meta">
+                    <span class="project-status complete-status">
+                        <i class="fas fa-check-circle"></i> Prototype
+                    </span>
+                    <span class="project-type-label">University Project</span>
+                </div>
+
+                <h3 class="project-title">Kilimo Bora Connect</h3>
+
+                <p class="project-description">
+                    Kilimo Bora Connect is a native Android prototype for Kenyan small-scale farmers, who often lose out to middlemen for lack of market data. It shows crop prices across major markets, lets farmers list produce for buyers, and gives localized weather advisories.
+                </p>
+
+                <ul class="project-features">
+                    <li><span class="feature-bullet">•</span> Searchable crop price listings with price-trend indicators</li>
+                    <li><span class="feature-bullet">•</span> Produce listing form with input validation and unit tests</li>
+                    <li><span class="feature-bullet">•</span> Built with Kotlin, Jetpack Compose and Material 3; uses sample data in this prototype</li>
+                </ul>
+
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">Jetpack Compose</span>
+                    <span class="tech-tag">Material 3</span>
+                    <span class="tech-tag">JUnit</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/IsaacNjoroge2024/KilimoBora-Connect-App" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> Repository
+                    </a>
+                </div>
+            </div>
+        </div><!-- /.project-card Kilimo Bora Connect -->
 
     </div>
 </section>
@@ -646,15 +854,19 @@
                     <span class="contact-info-label">Connect</span>
                     <div class="social-links">
                         <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener"
-                           class="social-link" title="GitHub">
+                           class="social-link" title="GitHub" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener"
-                           class="social-link" title="LinkedIn">
+                           class="social-link" title="LinkedIn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:isaacnj02@gmail.com" class="social-link" title="Email">
+                        <a href="mailto:isaacnj02@gmail.com" class="social-link" title="Email" aria-label="Email">
                             <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="files/Isaac-Njoroge-Resume.pdf" class="social-link" title="Download resume"
+                           aria-label="Download resume" download>
+                            <i class="fas fa-file-pdf"></i>
                         </a>
                     </div>
                 </div>
@@ -673,13 +885,13 @@
 <footer class="footer">
     <div class="container footer-content">
         <div class="footer-social">
-            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" title="GitHub">
+            <a href="https://github.com/IsaacNjoroge2024" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/isaac-njoroge-aabb6b34a/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="mailto:isaacnj02@gmail.com" title="Email">
+            <a href="mailto:isaacnj02@gmail.com" title="Email" aria-label="Email">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
